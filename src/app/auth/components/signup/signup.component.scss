@@ -1,5 +1,5 @@
 [nz-form] {
-    max-width: fit-content;
+    margin: auto;
 }
 .phone-select {
     width: 70px
@@ -11,12 +11,12 @@
 
 .child {
     padding: 50px;
-    position: absolute;
+    position: static;
     width: 380px;
     background-color: white;
     top: 50px;
     left: 50px;
-    transform: translate(-50%, -50%);
+    transform: translate(120%, 0%);
     box-shadow: 1 px 1px 15px -7px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     margin-bottom: 22px;
@@ -44,7 +44,7 @@ nz-form-control {
     width: 100%;
 }
 
-.button {
+button {
     background-color: #001529;
     border: none;
 }
