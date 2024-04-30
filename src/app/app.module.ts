@@ -11,7 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 
 // NG ZORRO IMPORTS
 import {NzSpinModule} from 'ng-zorro-antd/spin';
@@ -52,7 +52,8 @@ registerLocaleData(en);
     provideClientHydration(),
     { provide: NZ_I18N, useValue: en_US },
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
+    provideHttpClient(withInterceptorsFromDi(), withFetch()),
   ],
   bootstrap: [AppComponent]
 })
