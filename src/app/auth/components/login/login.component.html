@@ -8,23 +8,24 @@
                         <h1 style="margin-left: 100px;">Login</h1>
                     </div>
                 </div>
-                <form nz-form>
+                <form nz-form [formGroup]="loginForm">
                     <nz-form-item>
                         <nz-form-control nzErrorTip="Please Provide Your Email!">
                             <nz-input-group nzPrefixIcon="user">
-                                <input type="text" nz-input placeholder="Email" />
+                                <input type="text" nz-input placeholder="Email" formControlName="email"/>
                             </nz-input-group>
                         </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
                         <nz-form-control nzErrorTip="Please Provide Your Password!">
                             <nz-input-group nzPrefixIcon="lock">
-                                <input type="password" nz-input placeholder="Password" />
+                                <input type="password" nz-input placeholder="Password" formControlName="password"/>
                             </nz-input-group>
                         </nz-form-control>
                     </nz-form-item>
 
-                    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log In</button>
+                    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" 
+                        (click)="login()" [disabled]="loginForm.invalid">Log In</button>
                     Or <a routerLink="/register">Register Now!</a>
                  </form>
             </div>
