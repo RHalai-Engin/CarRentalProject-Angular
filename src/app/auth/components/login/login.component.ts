@@ -18,7 +18,7 @@ export class LoginComponent {
   constructor(private fb:FormBuilder,
     private authService:AuthService,
     private router:Router,
-    private message:NzMessageService){}
+    private message:NzMessageService){ }
 
   ngOnInit(){
     this.loginForm = this.fb.group({
@@ -37,7 +37,6 @@ export class LoginComponent {
         }
         StorageService.saveUser(user);
         StorageService.saveToken(res.jwt);
-        StorageService.isAdminLoggedIn();
         if(StorageService.isAdminLoggedIn()){
           this.router.navigateByUrl("/admin/dashboard");
         }
