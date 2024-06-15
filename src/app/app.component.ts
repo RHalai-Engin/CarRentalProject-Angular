@@ -10,16 +10,16 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Car_rental_angular';
 
-  isCustomerLoggedin: boolean = StorageService.isCustomerLoggedIn();
-  isAdminLoggedin: boolean = StorageService.isAdminLoggedIn();
+  isCustomerLoggedIn: boolean = StorageService.isCustomerLoggedIn();
+  isAdminLoggedIn: boolean = StorageService.isAdminLoggedIn();
 
   constructor(private router: Router) { }
 
   ngOnInit() {
     this.router.events.subscribe(event => {
       if(event.constructor.name === "NavigationEnd"){
-        this.isAdminLoggedin = StorageService.isAdminLoggedIn();
-        this.isCustomerLoggedin = StorageService.isCustomerLoggedIn();
+        this.isAdminLoggedIn = StorageService.isAdminLoggedIn();
+        this.isCustomerLoggedIn = StorageService.isCustomerLoggedIn();
       }
     })
   }
