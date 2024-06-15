@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: "register", component: SignupComponent},
   {path: "login", component: LoginComponent},
   {path: "admin", loadChildren : () => import("./moudules/admin/admin.module").then(a => a.AdminModule)},
-  {path: "customer", loadChildren : () => import("./moudules/customer/customer.module").then(m => m.CustomerModule)}
+  {path: "customer", loadChildren : () => import("./moudules/customer/customer.module").then(m => m.CustomerModule)},
 ];
 
 @NgModule({
